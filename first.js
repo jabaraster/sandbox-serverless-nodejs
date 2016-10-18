@@ -21,4 +21,16 @@ module.exports = {
         };
         callback(null, response);
     },
+
+    sandbox: (event, context, callback) => {
+        const response = {
+            statusCode: 200,
+            body: JSON.stringify({
+                func: 'select',
+                event: event,
+                context: context,
+            }),
+        };
+        callback(null, response);
+    },
 }

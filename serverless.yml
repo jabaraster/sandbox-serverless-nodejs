@@ -4,7 +4,6 @@ provider:
   name: aws
   runtime: nodejs4.3
   region: ap-northeast-1
-  memory: 1028
 #package:
 #  exclude:
 #    - exclude-me.js
@@ -21,6 +20,13 @@ functions:
     handler: first.echo
     events:
       - http: POST echo
+
+  sandbox:
+    memory: 128
+    handler: first.sandbox
+    events:
+     - http: GET sandbox
+
   insert:
     handler: dynamo.insert
     events:
