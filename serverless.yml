@@ -3,8 +3,8 @@ service: serverless-nodejs
 provider:
   name: aws
   runtime: nodejs4.3
-  memory: 128
   region: ap-northeast-1
+  memory: 128
 #package:
 #  exclude:
 #    - exclude-me.js
@@ -12,9 +12,15 @@ provider:
 
 functions:
   hello:
+    memory: 128
     handler: handler.hello
     events:
-      - http: GET hello
+      - http: POST hello
+  echo:
+    memory: 128
+    handler: handler.echo
+    events:
+      - http: POST echo
 
 resources:
   Resources:
