@@ -28,14 +28,17 @@ functions:
      - http: GET sandbox
 
   insert:
+    memory: 128
     handler: dynamo.insert
     events:
       - http: POST dynamo/insert
   select:
+    memory: 128
     handler: dynamo.select
     events:
       - http: GET dynamo/select
   delete:
+    memory: 128
     handler: dynamo.del
     events:
       - http: POST dynamo/delete
