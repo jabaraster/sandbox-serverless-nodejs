@@ -16,10 +16,10 @@ module.exports = {
 
     select: (event, context, callback) => {
         const param = {
-            //TableName: `${event.requestContext.stage}-comments`,
+            TableName: `${event.requestContext.stage}-comments`,
             Limit: 100,
         };
-        dynamodb.listTables(param, (err, data) => {
+        dynamodb.scan(param, (err, data) => {
             const response = {
                 statusCode: 200,
                 body: JSON.stringify({
