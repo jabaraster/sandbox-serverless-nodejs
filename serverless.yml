@@ -72,15 +72,13 @@ resources:
           Statement:
             - Effect: Allow
               Action:
-                - dynamodb:BatchGetItem
-                - dynamodb:BatchWriteItem
                 - dynamodb:DeleteItem
                 - dynamodb:GetItem
                 - dynamodb:PutItem
                 - dynamodb:Query
                 - dynamodb:UpdateItem
-                - dynamodb:ListTables
                 - dynamodb:Scan
+                - dynamodb:DescribeTable
               Resource: arn:aws:dynamodb:*:*:*
         Roles:
           - Ref: IamRoleLambdaExecution
